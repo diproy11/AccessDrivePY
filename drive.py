@@ -1,13 +1,34 @@
 import os
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
+from tkinter import *
+from tkinter import filedialog
+
 
 gauth = GoogleAuth()
 drive = GoogleDrive(gauth)
 
-folder_path = '1-0lhOBBZST4UrQFmChYSaQnc4T-ICy8u'
+
+folder_path = '19mBXIWIwuYQvkRLTS0Zhz_C5K1_jriEe'
 dir = "/Users/musubimanagement/Desktop/Resume"
 
+
+#Upload File
+def openFile():
+    global filepath
+    filepath = filedialog.askopenfilename()
+    if(filepath):
+        file_up = drive.CreateFile({'parents':[{'id':folder_path,'title':filepath}]})
+        file_up.SetContentFile(filepath)
+        file_up.Upload()
+        
+        
+    
+
+window = Tk()
+button = Button(text = "Open", command=openFile)
+button.pack()
+window.mainloop()
 
 #Creating file on drive
 def creating_file():
@@ -19,7 +40,7 @@ def creating_file():
 
 
 
-#UPLOADING FILE ON DRIVE
+# #UPLOADING ALL FILES ON DRIVE
 def upload_file():
     for file in os.listdir(dir):
         file_dir_path= os.path.join(dir,file)
@@ -35,4 +56,3 @@ def getList():
 
     for file in file_list:
         print(file['title'])
-
