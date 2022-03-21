@@ -1,0 +1,41 @@
+# AccessDrivePY
+
+# Connecting Api
+
+1. console.cloud.google.com
+2. sign up with the same id with drive
+3. click create new project
+4. project name
+5. click create
+6. select project
+7. Api & Services
+8. dashboard
+9. Click Enable Api and services
+10. Search Drive API and select
+11. Click Enable
+12. Click on +Create Cradential
+13. Credential Type 
+  * google drive api 
+  * User Data
+14. OAuth concent screen
+  * App Name - Anything
+  * User support email - Email ID
+  * Developer contact Info - Email ID
+15. Scopes
+  * Save & Continue
+16. OAuth Client ID
+  * Application ID - Select anything for which you want to create that application.
+  * Name It
+  * Create Now
+17 Download Cradential
+  * Download It.
+  * Rename It - client_secters.json
+
+# Libraries For Google Auth:
+1. Installed pydrive (pip install pydrive)
+2. Imported GoogleAuth , GoogleDrive
+
+# Library For File Select Window
+1. tkinter
+2. Imported filedialog
+
